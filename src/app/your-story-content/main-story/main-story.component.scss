@@ -1,0 +1,18 @@
+.background-color {
+  background-color: #f0f0f0;
+}
+.min-height {
+  min-height: 60rem;
+}
+.p-inputtext {
+  background: #f0f0f0 !important;
+  border: none !important;
+  min-width: 62.5rem;
+  color: #000;
+}
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+  border-color: none !important;
+}

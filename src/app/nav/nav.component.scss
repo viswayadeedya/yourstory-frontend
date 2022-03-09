@@ -1,0 +1,50 @@
+.nav-section {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 15px;
+}
+.nav-options {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+.nav-button {
+  position: relative;
+  top: 10px;
+}
+
+// Instagram-icon
+.instagram-icon {
+  position: relative;
+  top: 2px;
+}
+
+// button
+.p-button.p-button-outlined {
+  background-color: transparent;
+  color: rgb(12, 116, 148);
+  border: 1px solid rgb(12, 116, 148);
+  border-radius: 56px;
+}
+.p-button.p-button-outlined:enabled:active {
+  background: rgb(12, 116, 148);
+  color: #fff;
+  border: 1px solid;
+}
+.p-button.p-button-outlined:enabled:hover {
+  background: rgb(12, 116, 148);
+  color: #fff;
+  border: 1px solid;
+}
+.p-button:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.1rem rgb(12, 116, 148, 0.5);
+}
+.pointer-cursor {
+  cursor: pointer;
+}
+.browse-styles {
+  font-weight: bolder;
+}
+.dropdown-nav {
+  white-space: nowrap;
+}

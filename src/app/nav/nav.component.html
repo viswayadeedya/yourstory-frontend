@@ -1,0 +1,61 @@
+<div class="grid justify-content-between nav-section">
+  <img
+    src="../../assets/images/yourstory-logo.png"
+    style="height: 3.8rem"
+    alt="Your Story Logo"
+  />
+  <div>
+    <span class="nav-options" [routerLink]="'/home'">Home</span>
+    <span (click)="op.toggle($event)" class="pointer-cursor"
+      >Browse
+      <p-overlayPanel
+        class="optionsMenu"
+        [styleClass]="'app-overlay-panel-logout'"
+        #op
+      >
+        <ng-template pTemplate>
+          <div class="memberEdit">
+            <div class="grid">
+              <span class="col-12 browse-styles">BROWSE</span>
+              <span *ngFor="let i of items" class="pointer-cursor col-3">
+                {{ i }}</span
+              >
+            </div>
+          </div>
+        </ng-template>
+      </p-overlayPanel></span
+    >
+    <span class="nav-options" [routerLink]="'/write'">Write</span>
+    <span class="nav-options" [routerLink]="'/about'">About</span>
+    <span class="nav-options"><i class="pi pi-instagram"></i></span>
+    <span *ngIf="token" class="pointer-cursor"
+      ><p-avatar [label]="username"></p-avatar>&nbsp;
+      <span (click)="op.toggle($event)" class="logoutIcon"
+        ><i class="pi pi-angle-down navOptions"></i>
+        <p-overlayPanel
+          class="optionsMenu"
+          [styleClass]="'app-overlay-panel-insert'"
+          #op
+        >
+          <ng-template pTemplate>
+            <div class="memberEdit">
+              <span class="dropdown-nav pointer-cursor" (click)="logout()"
+                ><i class="pi pi-sign-out"></i>&nbsp;Logout</span
+              >
+            </div>
+          </ng-template>
+        </p-overlayPanel></span
+      >
+    </span>
+    <button
+      *ngIf="!token"
+      pButton
+      type="button"
+      label="Sign In"
+      (click)="login()"
+      class="p-button-outlined nav-button"
+    ></button>
+  </div>
+</div>
+
+<app-login [loginUser]="showLogin" (showLogin)="hideLogin($event)"></app-login>

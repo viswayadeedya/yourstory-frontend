@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+}
+.app-overlay-panel-logout {
+  max-width: 40rem !important;
+}
+.app-overlay-panel-insert {
+  z-index: 1001;
+  transform-origin: center top;
+  top: 66.2px;
+  left: 1402.2px !important;
+  --overlayArrowLeft: 18px !important;
+  transform: translateY(0px);
+  opacity: 1;
+}

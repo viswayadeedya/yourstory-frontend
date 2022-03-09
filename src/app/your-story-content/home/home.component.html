@@ -1,0 +1,189 @@
+<div>
+  <div class="grid home-section">
+    <div class="col-6 center-block">
+      <div class="center-block-text">
+        <div class="main-heading">YOURSTORY</div>
+        <div class="sub-heading">Trusted Book Publisher</div>
+      </div>
+    </div>
+    <div class="col-6 parallax"></div>
+  </div>
+  <div class="main-section">
+    <div class="main-section-text">BESTSELLERS</div>
+    <div class="main-section-sub-text">Discover Something New You’ll Love</div>
+  </div>
+  <div class="grid">
+    <div *ngFor="let story of allStories" class="col-4">
+      <div class="story-intro" (click)="onStoryClick(story)">
+        <img class="img-story" [src]="story.image" alt="hiking" />
+        <div class="story-title">{{ story.title | uppercase }}</div>
+        <div class="story-description">{{ story.description | uppercase }}</div>
+      </div>
+    </div>
+  </div>
+  <!-- AUTHORS -->
+  <div class="main-section">
+    <div class="main-section-text">YOURSTORY AUTHORS</div>
+    <div class="main-section-sub-text">Top Talent</div>
+  </div>
+  <div class="grid justify-content-center align-content-center">
+    <div class="col-6">
+      <div class="grid flex-row">
+        <div class="col-6">
+          <img
+            style="height: 320px"
+            src="../../../assets/images/author.png"
+            alt="author"
+          />
+        </div>
+        <div class="col-6 text-author-name-div">
+          <div class="author-name">TAYLOR QUILL</div>
+          <div class="author-category">Biography</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="grid flex-row">
+        <div class="col-6">
+          <img
+            style="height: 320px"
+            src="../../../assets/images/author.png"
+            alt="author"
+          />
+        </div>
+        <div class="col-6 text-author-name-div">
+          <div class="author-name">TAYLOR QUILL</div>
+          <div class="author-category">Biography</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="grid flex-row">
+        <div class="col-6">
+          <img
+            style="height: 320px"
+            src="../../../assets/images/author.png"
+            alt="author"
+          />
+        </div>
+        <div class="col-6 text-author-name-div">
+          <div class="author-name">TAYLOR QUILL</div>
+          <div class="author-category">Biography</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="grid flex-row">
+        <div class="col-6">
+          <img
+            style="height: 320px"
+            src="../../../assets/images/author.png"
+            alt="author"
+          />
+        </div>
+        <div class="col-6 text-author-name-div">
+          <div class="author-name">TAYLOR QUILL</div>
+          <div class="author-category">Biography</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Laptop -->
+
+  <div
+    style="margin-top: 4rem; background-color: #f0f0f0"
+    class="grid flex-row justify-content-center align-content-center"
+  >
+    <div class="col-6">
+      <img
+        style="width: 42.5rem; height: 27.5rem"
+        src="../../../assets/images/laptop.png"
+        alt=""
+      />
+    </div>
+    <div class="col-6 about-section">
+      <div class="about-quote">“Writing is the geometry of the soul”</div>
+      <div class="about-text">Plato</div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="contact-section">
+    <div class="grid flex-row">
+      <div class="col-7">
+        <div class="contact-us">CONTACT US</div>
+        <div class="email-id">Yourstory@gamail.com</div>
+      </div>
+      <div class="col-5">
+        <div class="grid">
+          <div class="col-6">
+            <div>Name*</div>
+            <input
+              class="text-box"
+              type="text"
+              placeholder="Enter Your Name"
+              pInputText
+              [(ngModel)]="name"
+            />
+          </div>
+          <div class="col-6">
+            <div>Email*</div>
+            <input
+              class="text-box"
+              type="text"
+              placeholder="Enter Your Email"
+              pInputText
+              [(ngModel)]="email"
+            />
+          </div>
+          <div class="col-6">
+            <div for="">Phone</div>
+            <input
+              class="text-box"
+              type="text"
+              placeholder="Enter Your Phone Number"
+              pInputText
+              [(ngModel)]="phone"
+            />
+          </div>
+          <div class="col-6">
+            <div for="">Address</div>
+            <input
+              placeholder="Enter Your Address"
+              class="text-box"
+              type="text"
+              pInputText
+              [(ngModel)]="address"
+            />
+          </div>
+          <div class="col-12">
+            <div for="">Subject</div>
+            <textarea
+              placeholder="Enter Your Subject"
+              class="text-area-box"
+              pInputTextarea
+              [(ngModel)]="subject"
+              rows="3"
+              cols="5"
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <div for="">Message</div>
+            <textarea
+              class="text-area-box"
+              pInputTextarea
+              rows="5"
+              cols="30"
+              placeholder="Enter Your Message here.."
+              [(ngModel)]="message"
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <p-button class="submit-button" label="Submit"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Story Parts -->

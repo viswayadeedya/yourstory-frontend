@@ -1,0 +1,37 @@
+.file-upload {
+  padding-top: 2rem;
+  margin-top: 5rem;
+  background-color: rgb(240, 240, 240);
+  max-height: 21.89rem;
+}
+
+.write-section {
+  padding-top: 2rem;
+  max-width: 37.5rem;
+  margin-top: 5rem;
+  background-color: rgb(240, 240, 240);
+}
+.story-heading {
+  border-bottom: 3px solid #0c7494;
+}
+.input-text {
+  width: 100%;
+}
+
+.text-area-box {
+  width: 100%;
+}
+:host ::ng-deep {
+  .upload-padding {
+    padding-top: 7rem;
+  }
+  .p-button {
+    background-color: #0c7494 !important;
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+      box-shadow 0.2s;
+    border-radius: 3px;
+  }
+}

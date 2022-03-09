@@ -1,0 +1,25 @@
+<div *ngIf="singleStory" class="home-section">
+  <div class="text-center card flex justify-content-center flex-wrap">
+    <img
+      class="pr-4"
+      [src]="singleStory.images"
+      alt=""
+      style="width: 18.75rem"
+    />
+    <div>
+      <h1 class="pb-3">{{ singleStory.title | uppercase }}</h1>
+      <div class="flex justify-content-center flex-wrap gap">
+        <div class="flex flex-column pointer">
+          <span>Views</span><span>{{ singleStory.views }}</span>
+        </div>
+        <div class="flex flex-column pointer">
+          <span>Rating</span
+          ><span>{{ singleStory.rating }}&nbsp;<i class="pi pi-star"></i></span>
+        </div>
+        <div class="flex flex-column">
+          <span>Parts</span><span>{{ singleStoryLength }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

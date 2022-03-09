@@ -1,0 +1,35 @@
+.p-button {
+  color: #ffffff;
+  background: rgb(12, 116, 148);
+  border: 1px solid rgb(12, 116, 148);
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-radius: 50px;
+}
+.p-button.p-button-outlined:enabled:active {
+  background: rgb(12, 116, 148);
+  color: #fff;
+  border: 1px solid;
+}
+.p-button.p-button-outlined:enabled:hover {
+  background: rgb(12, 116, 148);
+  color: #fff;
+  border: 1px solid;
+}
+.p-button:enabled:hover {
+  background: rgb(12, 116, 148);
+  color: #ffffff;
+  border-color: rgb(12, 116, 148);
+}
+.p-button:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.1rem rgb(12, 116, 148, 0.5);
+}
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}

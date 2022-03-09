@@ -1,0 +1,102 @@
+<form>
+  <div class="grid justify-content-center flex-row">
+    <div
+      class="col-2 file-upload"
+      style="text-align: center; margin-right: 1rem"
+    >
+      <div class="upload-padding">
+        <label class="pt-3"
+          >Add Cover
+
+          <input
+            #file
+            type="file"
+            accept=".png,.jpeg,.jpg"
+            name="image"
+            id="img"
+            style="display: none"
+            (change)="onBasicUpload(file.files)"
+          />
+        </label>
+        <img *ngIf="url" [src]="url" style="width: 12.5rem; height: 6.5rem" />
+      </div>
+    </div>
+    <div class="col-9 write-section">
+      <div class="col-12 py-1 story-heading">
+        <span class="pb-2">Story Details</span>
+      </div>
+      <div class="col-12 pt-3">
+        <div>Title</div>
+        <input
+          class="input-text"
+          type="text"
+          pInputText
+          [(ngModel)]="title"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="col-12">
+        <div class="pb-2">Description</div>
+        <textarea
+          class="text-area-box"
+          pInputTextarea
+          rows="5"
+          cols="30"
+          placeholder="Enter Your Message here.."
+          [(ngModel)]="description"
+          [ngModelOptions]="{ standalone: true }"
+        ></textarea>
+      </div>
+      <div class="col-12">
+        <div>Main Charecters</div>
+        <input
+          class="input-text"
+          type="text"
+          pInputText
+          [(ngModel)]="mainCharecter"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="col-12">
+        <div>Language</div>
+        <input
+          class="input-text"
+          type="text"
+          pInputText
+          [(ngModel)]="language"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="col-12">
+        Category&nbsp;:&nbsp;
+        <p-dropdown
+          style="width: 100%"
+          [options]="category"
+          [placeholder]="'Please Select a Category'"
+          [(ngModel)]="selectedCategory"
+          [ngModelOptions]="{ standalone: true }"
+          optionLabel="name"
+        ></p-dropdown>
+      </div>
+
+      <div class="col-12">
+        Tags&nbsp;:&nbsp;
+        <p-chips
+          [(ngModel)]="tags"
+          [ngModelOptions]="{ standalone: true }"
+        ></p-chips>
+      </div>
+
+      <div class="col-12" style="text-align: end">
+        <p-button class="col-6 cancel-button" label="Cancel"></p-button
+        >&nbsp;&nbsp;
+        <p-button
+          type="submit"
+          class="col-6 next-button"
+          label="&nbsp;Next&nbsp;"
+          (click)="onClickSave()"
+        ></p-button>
+      </div>
+    </div>
+  </div>
+</form>
