@@ -1,0 +1,22 @@
+<div *ngIf="allStories" class="main-section">
+  <div class="main-section-text">
+    BESTSELLERS BY CATEGORY {{ category | uppercase }}
+  </div>
+  <div class="main-section-sub-text">Discover Something New You’ll Love</div>
+</div>
+<div class="grid">
+  <div *ngFor="let story of allStories" class="col-4">
+    <div class="story-intro" (click)="onStoryClick(story)">
+      <img class="img-story" [src]="story.image" alt="hiking" />
+      <div class="story-title">{{ story.title | uppercase }}</div>
+      <div class="story-description">{{ story.description | uppercase }}</div>
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="!allStories.length"
+  style="font-size: 2rem"
+  class="text-center pt-6"
+>
+  NO STORIES FOUND BY CATEGORY {{ category | uppercase }}
+</div>

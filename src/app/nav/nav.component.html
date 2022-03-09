@@ -17,7 +17,11 @@
           <div class="memberEdit">
             <div class="grid">
               <span class="col-12 browse-styles">BROWSE</span>
-              <span *ngFor="let i of items" class="pointer-cursor col-3">
+              <span
+                *ngFor="let i of items"
+                (click)="getStories(i)"
+                class="pointer-cursor col-3"
+              >
                 {{ i }}</span
               >
             </div>

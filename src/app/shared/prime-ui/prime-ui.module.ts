@@ -11,6 +11,7 @@ import { ChipsModule } from 'primeng/chips';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { CardModule } from 'primeng/card';
     ChipsModule,
     AvatarModule,
     AvatarGroupModule,
+    ToastModule,
   ],
 })
 export class PrimeUiModule {}

@@ -12,6 +12,8 @@ import { WriteComponent } from './write/write.component';
 import { YourStoryRoutingModule } from './your-story-routing.module';
 import { MainStoryComponent } from './main-story/main-story.component';
 import { FullStoryComponent } from './full-story/full-story.component';
+import { PartStoryComponent } from './part-story/part-story.component';
+import { StoriesCategoryComponent } from './stories-category/stories-category.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { FullStoryComponent } from './full-story/full-story.component';
     WriteComponent,
     MainStoryComponent,
     FullStoryComponent,
+    PartStoryComponent,
+    StoriesCategoryComponent,
   ],
   imports: [
     CommonModule,

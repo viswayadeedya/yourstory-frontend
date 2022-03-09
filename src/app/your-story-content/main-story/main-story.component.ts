@@ -14,6 +14,7 @@ export class MainStoryComponent implements OnInit {
   imagePath: any;
   url: string | ArrayBuffer;
   selectedFile: File;
+  part: any;
 
   //   insertHtml = `<p>
   //   <textarea
@@ -32,7 +33,23 @@ export class MainStoryComponent implements OnInit {
     private route: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPartStory();
+  }
+
+  getPartStory() {
+    this.partService
+      .getPart(this.router.snapshot.paramMap.get('partId'))
+      .subscribe(
+        (data) => {
+          this.part = data.message[0];
+          this.partTitle = this.part.title;
+          this.partDescription0 = this.part.description;
+          this.url = this.part.images;
+        },
+        (err) => console.log(err)
+      );
+  }
 
   onBasicUpload(e): void {
     console.log(e);
@@ -61,6 +78,7 @@ export class MainStoryComponent implements OnInit {
     console.log(this.partDescription0);
     if (this.partTitle && this.partDescription0) {
       const formData = new FormData();
+      formData.append('userId', localStorage.getItem('userId'));
       formData.append('images', this.selectedFile, this.selectedFile.name);
       formData.append('title', this.partTitle);
       formData.append('description', this.partDescription0);

@@ -14,7 +14,7 @@
   </div>
   <div class="grid">
     <div *ngFor="let story of allStories" class="col-4">
-      <div class="story-intro" (click)="onStoryClick(story)">
+      <div class="story-intro pointer" (click)="onStoryClick(story)">
         <img class="img-story" [src]="story.image" alt="hiking" />
         <div class="story-title">{{ story.title | uppercase }}</div>
         <div class="story-description">{{ story.description | uppercase }}</div>

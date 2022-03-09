@@ -12,6 +12,7 @@ import { PrimeUiModule } from './shared/prime-ui/prime-ui.module';
 import { YourStoryContentModule } from './your-story-content/your-story-content.module';
 import { ButtonComponent } from './shared/button/button.component';
 import { AuthTokenInterceptor } from './services/interceptor.service';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, ButtonComponent, LoginComponent],
@@ -25,6 +26,7 @@ import { AuthTokenInterceptor } from './services/interceptor.service';
     AppRoutingModule,
   ],
   providers: [
+    MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

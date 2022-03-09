@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StoryService } from '../services/story/story.service';
 
 @Component({
   selector: 'app-nav',
@@ -32,7 +34,7 @@ export class NavComponent implements OnInit {
     'Vampire',
     'Werewolf',
   ];
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token') ? true : false;
@@ -47,5 +49,8 @@ export class NavComponent implements OnInit {
   }
   hideLogin(bool) {
     this.showLogin = false;
+  }
+  getStories(i) {
+    this.route.navigateByUrl(`categorystories/${i}?category=${i}`);
   }
 }

@@ -1,25 +1,52 @@
-<div *ngIf="singleStory" class="home-section">
-  <div class="text-center card flex justify-content-center flex-wrap">
+<div *ngIf="singleStory" class="home-section pt-6">
+  <div class="text-center card flex justify-content-center flex-wrap py-3">
     <img
       class="pr-4"
-      [src]="singleStory.images"
+      [src]="singleStory.image"
       alt=""
-      style="width: 18.75rem"
+      style="width: 18.75rem; height: 18.75rem"
     />
     <div>
-      <h1 class="pb-3">{{ singleStory.title | uppercase }}</h1>
-      <div class="flex justify-content-center flex-wrap gap">
+      <h1 class="pb-3 pt-6">{{ singleStory.title | uppercase }}</h1>
+      <div class="flex justify-content-center flex-wrap gap pt-4">
         <div class="flex flex-column pointer">
-          <span>Views</span><span>{{ singleStory.views }}</span>
+          <span>Views</span><span class="pt-2">{{ singleStory.views }}</span>
         </div>
+        &nbsp;|&nbsp;
         <div class="flex flex-column pointer">
           <span>Rating</span
-          ><span>{{ singleStory.rating }}&nbsp;<i class="pi pi-star"></i></span>
+          ><span class="pt-2"
+            >{{ singleStory.ratings }}&nbsp;<i class="pi pi-star"></i
+          ></span>
         </div>
+        &nbsp;|&nbsp;
         <div class="flex flex-column">
-          <span>Parts</span><span>{{ singleStoryLength }}</span>
+          <span>Parts</span><span class="pt-2">{{ singleStoryLength }}</span>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="p-4">
+    <div class="username pointer">{{ user.username }}</div>
+    <div class="py-4">{{ singleStory.description }}</div>
+    <div class="pb-4 flex">
+      <div class="tag-style" *ngFor="let tag of tags">{{ tag }}</div>
+    </div>
+  </div>
+
+  <div class="pt-5">
+    <p-card>
+      <ng-template pTemplate="header">
+        <span class="p-3 table-content">TABLE OF CONTENT</span>
+      </ng-template>
+      <div
+        class="pointer"
+        *ngFor="let part of singleStory.parts; let i = index"
+        (click)="onClickPart(part)"
+      >
+        {{ i + 1 }} {{ part.title }}
+      </div>
+    </p-card>
   </div>
 </div>

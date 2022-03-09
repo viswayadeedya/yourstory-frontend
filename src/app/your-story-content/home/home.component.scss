@@ -89,9 +89,6 @@
 .about-section {
   text-align: left;
 }
-.gap {
-  gap: 1rem;
-}
 .about-quote {
   line-height: 1.41;
   font-size: 1.375rem;
@@ -152,10 +149,6 @@ textarea::-webkit-input-placeholder {
 }
 .p-inputtext:enabled:hover {
   border-color: rgb(0, 0, 0, 0.7);
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
 }
 
 :host ::ng-deep {

@@ -1,0 +1,26 @@
+<div *ngIf="part" class="pt-5">
+  <div class="text-center flex justify-content-center flex-wrap gap">
+    <img class="image" [src]="part.images" alt="" />
+    <span class="flex flex-column pointer pt-6">
+      <span>Views</span><span class="pt-2">{{ part.views }}</span>
+    </span>
+    <span class="pt-6">&nbsp;|&nbsp;</span>
+    <span class="flex flex-column pointer pt-6" (click)="giveRating()">
+      <span>Rating</span
+      ><span class="pt-2"
+        >{{ part.ratings }}&nbsp;<i class="pi pi-star"></i
+      ></span>
+    </span>
+  </div>
+  <div class="my-4 py-4 part-title">{{ part.title }}</div>
+  <div class="part-des py-4">{{ part.description }}</div>
+</div>
+<div *ngIf="showEdit" class="text-right p-4">
+  <button
+    pButton
+    type="button"
+    class="py-2 px-4"
+    label="Edit"
+    (click)="onEdit(part)"
+  ></button>
+</div>

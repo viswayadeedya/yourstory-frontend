@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { StoryService } from 'src/app/services/story/story.service';
 
 @Component({
@@ -43,7 +44,11 @@ export class WriteComponent implements OnInit {
   url: string | ArrayBuffer;
   selectedFile: File;
 
-  constructor(private storyService: StoryService, private route: Router) {}
+  constructor(
+    private storyService: StoryService,
+    private messageService: MessageService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -86,6 +91,11 @@ export class WriteComponent implements OnInit {
               (res) => {
                 console.log(res);
                 if (res.status) {
+                  this.messageService.add({
+                    severity: 'success',
+                    summary: 'Success',
+                    detail: 'Story has been sucessfully added',
+                  });
                   this.route.navigateByUrl('/mainstory/' + res.storyId);
                 }
               },
@@ -97,5 +107,16 @@ export class WriteComponent implements OnInit {
         }
       }
     }
+  }
+  onConfirm() {
+    this.messageService.clear('c');
+  }
+
+  onReject() {
+    this.messageService.clear('c');
+  }
+
+  clear() {
+    this.messageService.clear();
   }
 }

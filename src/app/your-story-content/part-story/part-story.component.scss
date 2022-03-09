@@ -1,0 +1,20 @@
+.image {
+  width: 20rem;
+  height: 20rem;
+}
+.part-title {
+  background-color: #d0d0d057;
+}
+.part-des {
+  background-color: #d0d0d057;
+  height: 30rem;
+}
+.gap {
+  gap: 1rem;
+}
+.pointer {
+  cursor: pointer;
+  :hover {
+    color: #0c7494;
+  }
+}
